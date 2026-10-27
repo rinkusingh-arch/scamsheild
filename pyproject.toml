@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scamshield"
+version = "0.1.0"
+description = "Detect job scams and malicious/fake QR codes with transparent heuristics"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+dependencies = []
+
+[project.optional-dependencies]
+qr = ["opencv-python-headless>=4.8", "numpy"]
+web = ["flask>=3.0"]
+dev = ["pytest"]
+
+[project.scripts]
+scamshield = "scamshield.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["scamshield*"]
